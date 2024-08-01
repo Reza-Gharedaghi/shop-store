@@ -422,6 +422,9 @@
             <!-- start sidebar menu -->
             <ul class="profile-sidebar">
               <li><a href="/user/profile" class="text-info"><i class="far fa-user-circle align-middle me-2"></i>پروفایل</a></li>
+              <% if(user.role === "ADMIN"){ %>
+              <li><a href="/admin/category"><i class="far fa-user-circle align-middle me-2"></i> ورود به پنل ادمین </a></li>
+              <% } %>
               <li><a href="#"><i class="fas fa-shopping-cart align-middle me-2"></i>همه سفارش ها</a></li>
               <li><a href="#"><i class="fa  fa-retweet align-middle me-2"></i>درخواست مرجوعی</a></li>
               <li><a href="/user/profile/favorites"><i class="far fa-heart align-middle me-2"></i>لیست علاقمندی ها</a></li>
@@ -497,12 +500,12 @@
                     <div style="width: 360.5px;">
                       <a href="/product/<%= favorite.product._id %>"><%= favorite.product.title %></a>
                       <div style="width: 360.5px;display: flex; justify-content: flex-end;">
-                        <form action="/user/profile/remove-favorites/<%= favorite.product._id %>" method="post">
+                        <form action="/user/profile/remove-favorites/product/<%= favorite.product._id %>" method="post">
                           <button type="submit" class="btn-1">
                             <i class="fa fa-trash font-13"></i>
                           </button>
                         </form>
-                        <form action="" method="post">
+                        <form action="/shopping/cart/add-product/<%= favorite.product._id %>" method="post">
                           <button type="submit" class="btn-1">
                             <i class="fa fa-cart-plus font-13"></i>
                           </button>
@@ -661,6 +664,7 @@
           <p>استفاده از مطالب فروشگاه اینترنتی نیک کالا فقط برای مقاصد غیرتجاری و
             با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به یاس دیزاین می‌باشد.
           </p>
+          <p> آدرس گیت هاب توسعه دهنده: https://github.com/Reza-Gharedaghi</p>
         </div>
       </div><!-- end copy right -->
     </div>
