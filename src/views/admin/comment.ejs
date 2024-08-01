@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/commentList.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <h2>نیک کالا</h2>
+    <div class="titleHeader">
+      <p style="width: 40%;">صفحه مدیریت کامنت ها</p>
+      <div class="containerInput">
+        <form action="/admin/category/comments-manage/search-comment" method="post" style="display: flex;justify-content: space-between;align-items: center;width: 100%;">
+          <input type="text" name="id" placeholder="جستجوی کامنت ..." />
+          <button type="submit" class="btn-1">
+            <img src="/images/search.svg" alt="search.svg" width="23px" height="23px" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <aside>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">مدیریت محصولات</a>
+            <img src="/images/trash.svg" alt="trash.svg" />
+          </li>
+          <li>
+            <a href="#">مدیریت کاربرها</a>
+            <img src="/images/trash.svg" alt="trash.svg" />
+          </li>
+          <li>
+            <a href="#">مدیریت کامنت ها</a>
+            <img src="/images/trash.svg" alt="trash.svg" />
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div>
+      <h2 class="title">لیست کامنت ها</h2>
+      <% if(allComments.length){ %>
+      <% allComments.forEach(comment => { %>
+      <div class="containerCardComment">
+        <div class="cardCommentTitle">
+          <h2>نام کامنت گذار: <%= comment.user.username %> </h2>
+          <div>
+            <span class="idUser">
+              <h2>آیدی: <%= comment.user._id %> </h2>
+            </span>
+          </div>
+        </div>
+        <p class="textComment">
+          <%= comment.text %>
+        </p>
+        <div class="containerBTN">
+          <% if(comment.status === "در انتظار تائید"){ %>
+          <form action="/admin/category/comments-manage/reject-comment/<%= comment._id %>" method="post">
+            <button class="buttons" type="submit">
+              <h6>رد کردن کامنت ❌</h6>
+            </button>
+          </form>
+          <form action="/admin/category/comments-manage/accept-comment/<%= comment._id %>" method="post">
+            <button class="buttons" type="submit">
+              <h6> تایید کامنت ✅ </h6>
+            </button>
+          </form>
+          <% }else{ %>
+          <p> وضعیت کامنت: <%= comment.status %> </p>
+          <% } %>
+        </div>
+      </div>
+      <% }) %>
+      <% }else{ %>
+      <h4> کامنتی جهت نمایش یافت نشد ! </h4>
+      <% } %>
+  </main>
+
+  <footer>
+    <p>آدرس گیتهاب توسعه دهنده:</p>
+    <span>
+      <p style="font-weight: 700">url</p>
+    </span>
+  </footer>
+  <script src="/js/sweetAlert.js"></script>
+  <script>
+    if ("<%= locals.messages.success %>") {
+      swal({
+        title: "<%= locals.messages.success %>",
+        icon: "success",
+        buttons: "تائید",
+      })
+    } else if ("<%= locals.messages.error %>") {
+      swal({
+        title: "<%= locals.messages.error %>",
+        icon: "error",
+        buttons: "تلاش مجدد",
+      })
+    }
+  </script>
+</body>
+
+</html>

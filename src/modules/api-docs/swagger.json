@@ -1,0 +1,559 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Store Project 🛍️",
+    "description": "A store project that has many routine and professional features of a good store ✅",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "All routes for user auth"
+    },
+    {
+      "name": "Main",
+      "description": "All routes for main page"
+    },
+    {
+      "name": "Admin",
+      "description": "All routes for admin panel"
+    },
+    {
+      "name": "Comment",
+      "description": "All routes for user comment"
+    },
+    {
+      "name": "Product",
+      "description": "All routes for single product"
+    },
+    {
+      "name": "Search",
+      "description": "All routes for product search"
+    },
+    {
+      "name": "Shopping",
+      "description": "All routes for user shopping cart"
+    },
+    {
+      "name": "User",
+      "description": "All routes for user profile"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "get register page view"
+      },
+      "post": {
+        "tags": ["Auth"],
+        "summary": "user register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "username": "رضا محمدی",
+                  "email": "reza@gmail.com",
+                  "phone": "09121234567",
+                  "password": "rEza123*",
+                  "confirmPassword": "rEza123*"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User register successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "get login page view"
+      },
+      "post": {
+        "tags": ["Auth"],
+        "summary": "user login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "phone": "09121234567",
+                  "password": "rEza123*"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User login successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/auth/refresh-token": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "get new access token with refresh token",
+        "responses": {
+          "200": {
+            "description": "get new access token successfully"
+          },
+          "409": {
+            "description": "refresh token not found or expired or user not found"
+          }
+        }
+      }
+    },
+    "/auth/forget-password": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "get forget password page view"
+      },
+      "post": {
+        "tags": ["Auth"],
+        "summary": "send email to continue reset password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "reza@gmail.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "recovery email sent successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/auth/reset-password/{token}": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "get reset password page view (token set auto in url)"
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "set new password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "password": "rEza123*",
+                  "confirmPassword": "rEza123*"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "reset password successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "tags": ["Auth"],
+        "summary": "user logout (with button in user profile)"
+      }
+    },
+    "/main": {
+      "get": {
+        "tags": ["Main"],
+        "summary": "get main page view"
+      }
+    },
+    "/main/contact-us": {
+      "get": {
+        "tags": ["Main"],
+        "summary": "get contact us page view"
+      },
+      "post": {
+        "tags": ["Main"],
+        "summary": "send user message for managers and admins",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "title": "ارجاع محصول",
+                  "username": "رضا محمدی",
+                  "email": "reza@gmail.com",
+                  "phone": "09121234567",
+                  "text": "با سلام و عرض ادب. میخواستم جهت ارجاع محصول با بنده تماس بگیرید. سپاس فراوان."
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "message sent successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "get more info about a product in single page (id set auto in url when click on a product)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get product info successfully"
+          },
+          "409": {
+            "description": "Invalid id or product not found"
+          }
+        }
+      }
+    },
+    "/comment/product/{id}": {
+      "get": {
+        "tags": ["Comment"],
+        "summary": "get send comment page view (id set auto in url when click on a product)"
+      },
+      "post": {
+        "tags": ["Comment"],
+        "summary": "send comment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "title": "گوشی زیبا و خوب",
+                  "strengths": "باتری قوی ، صفحه نمایش",
+                  "weakPoints": "تک سیم کارت",
+                  "stars": 5,
+                  "text": "سلام و عرض ادب. گوشی خوبیه در کل و چند سال شما رو راحت میکنه و برای روزمره عالیه."
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "comment sent successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/search": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "get search product page view"
+      }
+    },
+    "/search/demand-product": {
+      "post": {
+        "tags": ["Search"],
+        "summary": "search product with product title",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "productInfo": "گوشی سامسونگ"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Find product or products successfully"
+          }
+        }
+      }
+    },
+    "/shopping/cart": {
+      "get": {
+        "tags": ["Shopping"],
+        "summary": "get shopping cart page view"
+      }
+    },
+    "/shopping/cart/add-product/{id}": {
+      "post": {
+        "tags": ["Shopping"],
+        "summary": "add product to shopping cart (id set auto in url when add product)",
+        "responses": {
+          "200": {
+            "description": "Add product successfully"
+          },
+          "400": {
+            "description": "Invalid data and others..."
+          }
+        }
+      }
+    },
+    "/shopping/cart/remove-product/{id}": {
+      "post": {
+        "tags": ["Shopping"],
+        "summary": "remove a product from shopping cart",
+        "responses": {
+          "200": {
+            "description": "Remove product successfully"
+          },
+          "400": {
+            "description": "Invalid data or others..."
+          }
+        }
+      }
+    },
+    "/shopping/cart/increase-product-count/{id}": {
+      "post": {
+        "tags": ["Shopping"],
+        "summary": "increase count of a product in shopping cart (id set auto in url when click on button)",
+        "responses": {
+          "200": {
+            "description": "Increase product count successfully"
+          },
+          "400": {
+            "description": "Invalid data or others..."
+          }
+        }
+      }
+    },
+    "/shopping/cart/decrease-product-count/{id}": {
+      "post": {
+        "tags": ["Shopping"],
+        "summary": "decrease count of a product in shopping cart (id set auto in url when click on button)",
+        "responses": {
+          "200": {
+            "description": "Decrease product count successfully"
+          },
+          "400": {
+            "description": "Invalid data or others..."
+          }
+        }
+      }
+    },
+    "/user/profile": {
+      "get": {
+        "tags": ["User"],
+        "summary": "get user profile page view"
+      }
+    },
+    "/user/profile/edit-infos": {
+      "get": {
+        "tags": ["User"],
+        "summary": "get user edit profile page view"
+      },
+      "post": {
+        "tags": ["User"],
+        "summary": "edit profile infos",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "username": "رضا محمدی",
+                  "phone": "09121234567",
+                  "email": "reza@gmail.com",
+                  "nationalCode": "0123456789",
+                  "getNews": "بله",
+                  "cardNumber": "6219861952289013"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Edit infos successfully"
+          },
+          "400": {
+            "description": "Invalid data or others..."
+          }
+        }
+      }
+    },
+    "/user/profile/change-password": {
+      "get": {
+        "tags": ["User"],
+        "summary": "get change password page view"
+      },
+      "post": {
+        "tags": ["User"],
+        "summary": "change password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "password": "rEza123*"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Change password successfully"
+          },
+          "409": {
+            "description": "Invalid data"
+          }
+        }
+      }
+    },
+    "/user/profile/favorites": {
+      "get": {
+        "tags": ["User"],
+        "summary": "get user favorite products page view"
+      }
+    },
+    "/user/profile/add-favorites/product/{id}": {
+      "post": {
+        "tags": ["User"],
+        "summary": "add product to favorites list (id auto set in url when click on button)",
+        "responses": {
+          "200": {
+            "description": "Add product to favorites successfully"
+          },
+          "400": {
+            "description": "Some errors maybe..."
+          }
+        }
+      }
+    },
+    "/user/profile/remove-favorites/product/{id}": {
+      "post": {
+        "tags": ["User"],
+        "summary": "remove product from favorites list (id auto set in url when click on button)",
+        "responses": {
+          "200": {
+            "description": "Remove product to favorites successfully"
+          },
+          "400": {
+            "description": "Some errors maybe..."
+          }
+        }
+      }
+    },
+    "/user/profile/address": {
+      "get": {
+        "tags": ["User"],
+        "summary": "get user address page view"
+      }
+    },
+    "/user/profile/address/register": {
+      "post": {
+        "tags": ["User"],
+        "summary": "set new address for profile or payment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "username": "رضا محمدی",
+                  "phone": "09121234567",
+                  "postCode": "1355921322",
+                  "state": "تهران",
+                  "city": "تهران",
+                  "completeAddress": "شهرک غرب، خیابان گلستان، کوچه رضایی، پلاک 10، واحد 10"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Set address successfully"
+          },
+          "409": {
+            "description": "Invalid data or address set in the past"
+          }
+        }
+      }
+    },
+    "/user/profile/address/remove/{id}": {
+      "post": {
+        "tags": ["User"],
+        "summary": "remove user address (id auto set in url when click on button)",
+        "responses": {
+          "200": {
+            "description": "Address deleted successfully"
+          },
+          "400": {
+            "description": "Invalid id or address not found or..."
+          }
+        }
+      }
+    },
+    "/user/profile/comments": {
+      "get": {
+        "tags": ["User"],
+        "summary": "get user comments page view"
+      }
+    },
+    "/admin/category": {
+      "get": {
+        "tags": ["Admin"],
+        "summary": "get admin panel category page view"
+      }
+    },
+    "/admin/category/users-manage": {
+      "get": {
+        "tags": ["Admin"],
+        "summary": "get user manage page view"
+      }
+    },
+    "/admin/category/comments-manage": {
+      "get": {
+        "tags": ["Admin"],
+        "summary": "get comment manage page view"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Dana";
+  src: url("/font/Dana-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Dana";
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn {
+  background-color: #ef4056;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  padding: 20px 40px;
+  font-size: 20px;
+  box-shadow: 2px 2px 8px rgb(151, 151, 151);
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 300ms ease-in;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bootstrap.rtl.css">
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/css/asRange.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>قالب فروشگاهی نیک کالا | جستجو</title>
+</head>
+
+<body>
+
+  <div class="d-none d-lg-block top-ads">
+    <!-- start top ads -->
+    <a href="#" target="_blank"><img src="/images/top-ads.jpg"></a>
+  </div><!-- end top ads -->
+
+  <header class="w-100 d-none d-lg-block bg-white">
+    <!-- start header -->
+    <div class="container">
+      <div class="row py-2">
+        <div class="col-lg-2"><img src="/images/logo.png" alt="Nikkala"></div><!-- logo -->
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <!-- start search box -->
+          <div class="input-group search-box">
+            <input type="search" class="form-control form-control-lg" placeholder="جستجو در نیک کالا">
+            <button type="submit" class="btn btn-danger"><img src="/images/search.png"></button>
+          </div>
+        </div><!-- end search box -->
+        <div class="col-lg-3 d-flex align-items-center justify-content-end px-0">
+          <!-- start signup & login -->
+          <div class="dropdown">
+            <%- include("../partials/userStatus.ejs")%>
+          </div>
+        </div><!-- end signup & login -->
+        <div class="col-lg-1 d-flex align-items-center justify-content-center px-0">
+          <!-- start shopping cart -->
+          <a href="/shopping/cart" class="position-relative">
+            <img src="/images/cart.png">
+          </a>
+          <div class="offcanvas offcanvas-end" tabindex="-1" data-bs-scroll="true" id="shopping-cart">
+            <!-- start shopping cart offcanvas -->
+
+            <div class="offcanvas-header">
+              <!-- start offcanvas header -->
+              <p class="offcanvas-title font-12">سبد خرید (4 کالا)</p>
+              <button type="button" class="text-reset btn-close" data-bs-dismiss="offcanvas"></button>
+            </div><!-- end offcanvas header -->
+
+            <div class="offcanvas-body">
+              <!-- start cart body -->
+
+              <div class="row">
+                <!-- start cart item -->
+                <div class="col-4"><img src="/images/mobile1.jpg" class="img-fluid img-thumbnail"></div>
+                <div class="col-8 d-flex align-items-center">
+                  <a href="product.html" class="cart-product-title">گوشی موبایل سامسونگ مدل Galaxy A21S SM-A217F/DS</a>
+                </div>
+              </div>
+              <div class="row my-3 border-bottom">
+                <div class="col-6 d-flex">
+                  <span class="number">1 عدد</span>
+                  <span class="color" style="background-color:#d4d4d4;"></span>
+                  <i class="fa fa-trash cart-delete-btn"></i>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p class="cart-product-price">4,169,000 تومان</p>
+                </div>
+              </div><!-- end cart item -->
+
+              <div class="row">
+                <!-- start cart item -->
+                <div class="col-4"><img src="/images/mobile2.jpg" class="img-fluid img-thumbnail"></div>
+                <div class="col-8 d-flex align-items-center">
+                  <a href="product.html" class="cart-product-title">گوشی موبایل سامسونگ مدل Galaxy A21S SM-A217F/DS</a>
+                </div>
+              </div>
+              <div class="row my-3 border-bottom">
+                <div class="col-6 d-flex">
+                  <span class="number">1 عدد</span>
+                  <span class="color" style="background-color:#d4d4d4;"></span>
+                  <i class="fa fa-trash cart-delete-btn"></i>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p class="cart-product-price">4,169,000 تومان</p>
+                </div>
+              </div><!-- end cart item -->
+
+              <div class="row">
+                <!-- start cart item -->
+                <div class="col-4"><img src="/images/mobile3.jpg" class="img-fluid img-thumbnail"></div>
+                <div class="col-8 d-flex align-items-center">
+                  <a href="product.html" class="cart-product-title">گوشی موبایل سامسونگ مدل Galaxy A21S SM-A217F/DS</a>
+                </div>
+              </div>
+              <div class="row my-3 border-bottom">
+                <div class="col-6 d-flex">
+                  <span class="number">1 عدد</span>
+                  <span class="color" style="background-color:#d4d4d4;"></span>
+                  <i class="fa fa-trash cart-delete-btn"></i>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p class="cart-product-price">4,169,000 تومان</p>
+                </div>
+              </div><!-- end cart item -->
+
+            </div><!-- end cart body -->
+
+            <div class="row cart-footer">
+              <!-- start cart footer-->
+              <div class="col-5">
+                <p>مبلغ قابل پرداخت:</p>
+                <p>12,480,000 تومان</p>
+              </div>
+              <div class="col-7">
+                <a href="login.html" class="btn btn-info font-13 btn-lg ms-4">ورود و ثبت سفارش</a>
+              </div>
+            </div><!-- end cart footer-->
+
+          </div><!-- end shopping cart offcanvas -->
+        </div><!-- end shopping cart -->
+      </div>
+    </div>
+  </header><!-- end header -->
+
+  <header class="d-lg-none bg-white w-100">
+    <!-- start responsive header-->
+    <div class="container">
+      <div class="row py-2">
+
+        <div class="col-7">
+          <a href="#mobile-menu" data-bs-toggle="offcanvas"><i class="fa fa-bars mobile-menu-icon"></i></a><!-- mobile menu icon -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" data-bs-scroll="true" id="mobile-menu">
+            <!-- start mobile menu-->
+
+            <div class="offcanvas-header">
+              <!-- start menu header -->
+              <img src="/images/logo.png">
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div><!-- end menu header -->
+
+            <div class="offcanvas-body px-0">
+
+              <div class="input-group search-box px-3">
+                <!-- start search box -->
+                <input type="search" class="form-control form-control-lg" placeholder="جستجو در نیک کالا">
+                <button type="submit" class="btn btn-danger"><img src="/images/search.png"></button>
+              </div><!-- end search box -->
+
+              <ul class="mobile-menu-level-1">
+                <!-- start mobile menu level 1 -->
+                <li class="has-mobile-submenu"><a href="#">دسته بندی محصولات</a>
+
+                  <ul class="mobile-menu-level-2">
+                    <!-- start mobile menu level 2 -->
+                    <li class="has-mobile-submenu-2"><a href="#">کالای دیجیتال</a>
+
+                      <ul class="mobile-menu-level-3">
+                        <!-- start mobile menu level 3 -->
+                        <li><a href="/search">گوشی موبایل</a></li>
+                        <li><a href="/search">لوازم جانبی گوشی</a></li>
+                        <li><a href="/search">تبلت</a></li>
+                        <li><a href="/search">دوربین عکاسی</a></li>
+                      </ul><!-- start mobile menu level 3 -->
+
+                    </li>
+                    <li><a href="/search">زیبایی و سلامت</a></li>
+                    <li><a href="/search">مد و پوشاک</a></li>
+                    <li><a href="/search">خانه و آشپزخانه</a></li>
+                    <li><a href="/search">کتاب و لوازم تحریر</a></li>
+                  </ul><!-- end mobile menu level 2 -->
+
+                </li>
+                <li><a href="#">تخفیف‌ها و پیشنهادها</a></li>
+                <li class="has-mobile-submenu"><a href="#">صفحات</a>
+
+                  <ul class="mobile-menu-level-2">
+                    <!-- start mobile menu level 2 -->
+                    <li><a href="/auth/register">ثبت نام / ورود</a></li>
+                    <li class="has-mobile-submenu-2"><a href="#"> محصولات </a>
+
+                      <ul class="mobile-menu-level-3">
+                        <!-- start mobile menu level 3 -->
+                        <li><a href="#">محصول موجود</a></li>
+                        <li><a href="#">محصول ناموجود</a></li>
+                      </ul><!-- start mobile menu level 3 -->
+
+                    </li>
+                    <li><a href="/user/profile">پروفایل کاربر</a></li>
+                    <li><a href="#">وبلاگ</a></li>
+                  </ul><!-- end mobile menu level 2 -->
+
+                </li>
+                <li><a href="/main/contact-us">تماس با ما</a></li>
+                <li><a href="#">درباره ما</a></li>
+              </ul><!-- end mobiile menu level 1 -->
+
+            </div>
+          </div><!-- end mobile menu-->
+          <img src="/images/logo.png" class="img-fluid"><!-- logo -->
+        </div>
+
+        <div class="col-4 d-flex align-items-center justify-content-end">
+          <!-- start signup & login dropdown -->
+          <div class="dropdown">
+            <a href="#" data-bs-toggle="dropdown"><i class="fa fa-user-lock signup-login-icon"></i></a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <!-- start dropdown box -->
+              <li class="d-flex">
+                <img src="/images/avatar.jpg" class="avatar">
+                <div class="ms-2">
+                  <a href="/user/profile" class="font-14 text-dark">امیرحسین رضایی</a>
+                  <a href="/user/profile" class="font-12 d-block text-info mt-2">مشاهده حساب کاربری <i class="fa fa-chevron-left align-middle mt-1"></i></a>
+                </div>
+              </li>
+              <li>
+                <a href="/user/profile" class="login-link"><i class="fa fa-shopping-basket text-muted font-14 me-1"></i> سفارش های من</a>
+                <a href="/user/profile" class="login-link"><i class="fa fa-gift text-muted font-14 me-1"></i>جوایز نیک کلاب</a>
+                <a href="#" class="login-link"><i class="fas fa-sign-out-alt text-muted font-14 me-1"></i>خروج از حساب کاربری</a>
+              </li>
+            </ul><!-- end dropdown box -->
+          </div><!-- end signup & login dropdown -->
+        </div>
+
+        <div class="col-1 d-flex align-items-center justify-content-end">
+          <!-- start shopping cart responsive-->
+          <a href="/shopping/cart" class="position-relative">
+            <img src="/images/cart.png">
+          </a>
+          <div class="offcanvas offcanvas-end" tabindex="-1" data-bs-scroll="true" id="shopping-cart-responsive">
+            <!-- start shopping cart offcanvas -->
+
+            <div class="offcanvas-header">
+              <!-- start offcanvas header -->
+              <p class="offcanvas-title font-12">سبد خرید (4 کالا)</p>
+              <button type="button" class="text-reset btn-close" data-bs-dismiss="offcanvas"></button>
+            </div><!-- end offcanvas header -->
+
+            <div class="offcanvas-body">
+              <!-- start cart body -->
+
+              <div class="row">
+                <!-- start cart item -->
+                <div class="col-4"><img src="/images/mobile1.jpg" class="img-fluid img-thumbnail"></div>
+                <div class="col-8 d-flex align-items-center">
+                  <a href="product.html" class="cart-product-title">گوشی موبایل سامسونگ مدل Galaxy A21S SM-A217F/DS</a>
+                </div>
+              </div>
+              <div class="row my-3 border-bottom">
+                <div class="col-6 d-flex">
+                  <span class="number">1 عدد</span>
+                  <span class="color" style="background-color:#d4d4d4;"></span>
+                  <i class="fa fa-trash cart-delete-btn"></i>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p class="cart-product-price">4,169,000 تومان</p>
+                </div>
+              </div><!-- end cart item -->
+
+              <div class="row">
+                <!-- start cart item -->
+                <div class="col-4"><img src="/images/mobile2.jpg" class="img-fluid img-thumbnail"></div>
+                <div class="col-8 d-flex align-items-center">
+                  <a href="product.html" class="cart-product-title">گوشی موبایل سامسونگ مدل Galaxy A21S SM-A217F/DS</a>
+                </div>
+              </div>
+              <div class="row my-3 border-bottom">
+                <div class="col-6 d-flex">
+                  <span class="number">1 عدد</span>
+                  <span class="color" style="background-color:#d4d4d4;"></span>
+                  <i class="fa fa-trash cart-delete-btn"></i>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p class="cart-product-price">4,169,000 تومان</p>
+                </div>
+              </div><!-- end cart item -->
+
+              <div class="row">
+                <!-- start cart item -->
+                <div class="col-4"><img src="/images/mobile3.jpg" class="img-fluid img-thumbnail"></div>
+                <div class="col-8 d-flex align-items-center">
+                  <a href="product.html" class="cart-product-title">گوشی موبایل سامسونگ مدل Galaxy A21S SM-A217F/DS</a>
+                </div>
+              </div>
+              <div class="row my-3 border-bottom">
+                <div class="col-6 d-flex">
+                  <span class="number">1 عدد</span>
+                  <span class="color" style="background-color:#d4d4d4;"></span>
+                  <i class="fa fa-trash cart-delete-btn"></i>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <p class="cart-product-price">4,169,000 تومان</p>
+                </div>
+              </div><!-- end cart item -->
+
+            </div><!-- end cart body -->
+
+            <div class="row cart-footer">
+              <!-- start cart footer-->
+              <div class="col-5">
+                <p>مبلغ قابل پرداخت:</p>
+                <p>12,480,000 تومان</p>
+              </div>
+              <div class="col-7">
+                <a href="login.html" class="btn btn-info font-13 btn-lg ms-4">ورود و ثبت سفارش</a>
+              </div>
+            </div><!-- end cart footer-->
+
+          </div><!-- end shopping cart offcanvas -->
+        </div><!-- end shopping cart responsive-->
+
+      </div>
+    </div>
+  </header><!-- end responsive header-->
+
+  <nav class="d-none d-lg-block navigation">
+    <!-- start main menu -->
+    <div class="container">
+      <ul class="main-menu">
+        <li class="has-mega-menu"><a href="#"> دسته بندی محصولات <i class="fa fa-angle-down"></i></a>
+          <ul class="row mega-menu">
+            <!-- start mega menu-->
+            <li class="col-3 mega-menu-box">
+              <ul>
+                <li class="menu-title"><i class="fa fa-angle-left"></i>کالای دیجیتال</li>
+                <li><a href="/search">گوشی موبایل</a></li>
+                <li><a href="/search">لوازم جانبی گوشی</a></li>
+                <li><a href="/search">لپ تاپ</a></li>
+                <li><a href="/search">لوازم جانبی لپ تاپ</a></li>
+                <li><a href="/search">تبلت</a></li>
+                <li><a href="/search">مچ بند و ساعت هوشمند</a></li>
+                <li><a href="/search">مودم و تجهیزات شبکه</a></li>
+              </ul>
+            </li>
+            <li class="col-3 mega-menu-box">
+              <ul>
+                <li class="menu-title"><i class="fa fa-angle-left"></i>زیبایی و سلامت</li>
+                <li><a href="/search">لوازم آرایشی</a></li>
+                <li><a href="/search">لوازم بهداشتی</a></li>
+                <li><a href="/search">عطر،ادکلن،اسپری و ست</a></li>
+                <li><a href="/search">ابزار سلامت و طبی</a></li>
+                <li><a href="/search">لوازم شخصی برقی</a></li>
+              </ul>
+              <ul>
+                <li class="menu-title"><i class="fa fa-angle-left"></i>مد و پوشاک</li>
+                <li><a href="/search">لباس زنانه</a></li>
+                <li><a href="/search">لباس مردانه</a></li>
+              </ul>
+            </li>
+            <li class="col-3 mega-menu-box">
+              <ul>
+                <li class="menu-title"><i class="fa fa-angle-left"></i>خانه و آشپزخانه</li>
+                <li><a href="/search">صوتی و تصویری</a></li>
+                <li><a href="/search">لوازم برقی خانگی</a></li>
+                <li><a href="/search">فرش ماشینی، دستبافت، تابلو</a></li>
+              </ul>
+              <ul>
+                <li class="menu-title"><i class="fa fa-angle-left"></i>اسباب بازی، کودک و نوزاد</li>
+                <li><a href="/search">پوشاک کودک و نوزاد</a></li>
+                <li><a href="/search">بازی و سرگرمی کودک</a></li>
+                <li><a href="/search">سلامت، ایمنی و مراقبت</a></li>
+              </ul>
+            </li>
+            <li class="col-3 mega-menu-box">
+              <ul>
+                <li class="menu-title"><i class="fa fa-angle-left"></i>کتاب و لوازم تحریر</li>
+                <li><a href="/search">کتاب و مجله</a></li>
+                <li><a href="/search">کتاب صوتی</a></li>
+                <li><a href="/search">لوازم تحریر</a></li>
+              </ul>
+              <a href="#" class="d-block"><img src="/images/menu-pic.jpg" class="img-fluid rounded mt-3"></a>
+            </li>
+          </ul><!-- end mega menu-->
+        </li>
+        <li><a href="/search">تخفیف‌ها و پیشنهادها</a></li>
+        <li class="has-sub-menu"><a href="#">صفحات <i class="fa fa-angle-down"></i></a>
+          <ul class="sub-menu">
+            <!-- start sub menu-->
+            <li><a href="/auth/register">ثبت نام / ورود</a></li>
+            <li class="has-sub-menu-level-2"><a href="#">محصولات</a><i class="fa fa-angle-down"></i>
+              <ul class="sub-menu-level-2">
+                <!-- start sub menu level 2 -->
+                <li><a href="#">محصول موجود</a></li>
+                <li><a href="#">محصول ناموجود</a></li>
+              </ul><!-- end sub menu level 2 -->
+            </li>
+            <li><a href="/user/profile">پروفایل کاربر</a></li>
+            <li><a href="#">وبلاگ</a></li>
+            <li><a href="/shopping/cart">سبد خرید</a></li>
+          </ul><!-- end sub menu-->
+        </li>
+        <li><a href="/main/contact-us">تماس با ما</a></li>
+        <li><a href="#">درباره ما</a></li>
+      </ul>
+    </div>
+  </nav><!-- end main menu -->
+
+  <div class="container">
+    <!-- start breadcrumb -->
+    <div class="row mt-3">
+      <div class="col-12">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#" class="breadcrumb-custom">فروشگاه اینترنتی نیک کالا</a></li>
+          <li class="breadcrumb-item"><a href="#" class="breadcrumb-custom">کالای دیجیتال</a></li>
+          <li class="breadcrumb-item"><a href="#" class="breadcrumb-custom">گوشی موبایل</a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- end breadcrumb -->
+
+  <main>
+    <!-- start main -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <!-- start sidebar -->
+
+          <div class="custom-sidebar">
+            <!-- start category filter -->
+            <p class="font-12 border-bottom pb-2">دسته بندی نتایج</p>
+            <ul class="ps-0">
+              <li class="mt-2 ms-2"><a href="#" class="font-12"><i class="fa fa-chevron-left me-2 font-11"></i>کالای دیجیتال </a></li>
+              <li class="mt-2 ms-4"><a href="#" class="font-12"><i class="fa fa-chevron-down me-2 font-11"></i>موبایل </a>
+                <ul class="ps-0">
+                  <li class="mt-2 ms-3 font-12">گوشی موبایل</li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- end category filter -->
+
+          <div class="custom-sidebar">
+            <!-- start search in resullt -->
+            <p class="font-12 border-bottom pb-2">جستجو در نتایج</p>
+            <div class="search-in-result  position-relative mt-3">
+              <form action="/search/demand-product" method="post" style="display: flex;">
+                <input type="text" class="form-control" name="productInfo" placeholder=" نام محصول یا برند مورد نظر ">
+                <button type="submit" style="background-color: transparent;border: 1px solid #ced4da;">
+                  <img src="/images/search.svg" alt="search.svg" />
+                </button>
+              </form>
+            </div>
+          </div><!-- end search in resullt -->
+
+          <div class="custom-sidebar">
+            <!-- start brands fiter -->
+            <p class="font-12 border-bottom pb-2">برند</p>
+            <div class="mt-3 px-2 brands-select">
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-1">
+                <label class="form-check-label font-12" for="brand-1">سامسونگ</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-2">
+                <label class="form-check-label font-12" for="brand-2">شیائومی</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-3">
+                <label class="form-check-label font-12" for="brand-3">هوآوی</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-4">
+                <label class="form-check-label font-12" for="brand-4">آنر</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-5">
+                <label class="form-check-label font-12" for="brand-5">اپل</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-6">
+                <label class="form-check-label font-12" for="brand-6">نوکیا</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="brand-7">
+                <label class="form-check-label font-12" for="brand-7">جی پلاس</label>
+              </div>
+            </div>
+          </div><!-- end brands fiter -->
+
+          <div class="custom-sidebar">
+            <!-- start sidebar switch fiter -->
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="send">
+              <label class="form-check-label font-12" for="send">فقط ارسال فوری</label>
+            </div>
+          </div><!-- end sidebar switch fiter -->
+
+          <div class="custom-sidebar">
+            <!-- start sidebar switch fiter -->
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="product">
+              <label class="form-check-label font-12" for="product">فقط کالاهای موجود</label>
+            </div>
+          </div><!-- end sidebar switch fiter -->
+
+          <div class="custom-sidebar">
+            <!-- start color fiter -->
+            <p class="font-12 border-bottom pb-2">انتخاب رنگ</p>
+            <label class="select-color mt-2">
+              <span class="color-shape" style="background-color: rgb(252, 13, 13);"></span>
+              <input type="radio" name="color">
+              <span class="color-name">قرمز</span>
+            </label>
+
+            <label class="select-color mt-2">
+              <span class="color-shape" style="background-color: rgb(3, 3, 3);"></span>
+              <input type="radio" name="color">
+              <span class="color-name">مشکی</span>
+            </label>
+
+            <label class="select-color mt-2">
+              <span class="color-shape" style="background-color: rgb(57, 90, 197);"></span>
+              <input type="radio" name="color">
+              <span class="color-name">آبی</span>
+            </label>
+
+            <label class="select-color mt-2">
+              <span class="color-shape" style="background-color: rgb(78, 143, 72);"></span>
+              <input type="radio" name="color">
+              <span class="color-name">سبز</span>
+            </label>
+          </div><!-- end color fiter -->
+
+          <div class="custom-sidebar">
+            <p class="font-12 border-bottom pb-2">محدوده قیمت (تومان)</p>
+            <div class="price-slider"></div>
+            <button type="submit" class="btn btn-info font-13 w-100 mt-3"><i class="fa fa-filter align-middle font-12 me-2"></i>فیلتر</button>
+          </div>
+
+        </div><!-- end sidebar -->
+
+        <div class="col-lg-9">
+          <div class="product-items">
+            <div class="row">
+              <div class="col-12">
+                <!-- start sort nav -->
+                <ul class="nav nav-pills sort-by">
+                  <span class="font-13 mt-2 me-2"> مرتب سازی بر اساس :</span>
+                  <li class="nav-item"><a href="#" class="nav-link font-13 active">پر فروش ترین</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link font-13 text-dark">پر بازدیدترین</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link font-13 text-dark">جدید ترین</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link font-13 text-dark">ارزان ترین</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link font-13 text-dark">گران ترین</a></li>
+                </ul>
+              </div><!-- end sort nav -->
+            </div>
+
+            <div class="row">
+              <% if(allProducts.length) { %>
+              <% allProducts.forEach(product => { %>
+              <div class="col-lg-4 col-md-6">
+                <!-- start item -->
+                <a href="/product/<%= product._id %>" class="d-block">
+                  <div class="card mt-3">
+                    <img src="/images/mobile1.jpg" class="slider-pic">
+                    <div class="card-body">
+                      <a href="/product/<%= product._id %>" class="product-title"> <%= product.title %> </a>
+                      <div class="d-flex justify-content-between">
+                        <div class="mt-3 ps-4" style="display: flex; justify-content: space-between;align-items: center;">
+                          <% if(product.isAddedToFavorite){ %>
+                          <form action="/user/profile/remove-favorites/product/<%=product._id%>" method="post">
+                            <button class="btn-1" type="submit">
+                              <span class="heart" style="color: #FF0000 !important;"><i class="fas fa-heart"></i></span>
+                            </button>
+                          </form>
+                          <% }else{ %>
+                          <form action="/user/profile/add-favorites/product/<%=product._id%>" method="post">
+                            <button class="btn-1" type="submit">
+                              <span class="heart"><i class="far fa-heart font-14 text-muted me-2"></i></span>
+                            </button>
+                          </form>
+                          <% } %>
+                          <span class="random"><i class="fa fa-random font-14 text-muted me-2"></i></span>
+                          <form action="/shopping/cart/add-product/<%= product._id %>" method="post">
+                            <button class="btn-1" type="submit">
+                              <span class="add-to-cart"><i class="fa fa-cart-plus font-13 text-muted"></i></span>
+                            </button>
+                          </form>
+                        </div>
+                        <p class="font-13 mt-3 pe-4"> <%= product.price %> </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div><!-- end item -->
+              <% }) %>
+              <ul class="custom-pagination mt-4">
+                <!-- start pagination -->
+                <li><a href="#"><i class="fa fa-angle-right align-middle"></i></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#"><i class="fa fa-angle-left align-middle"></i></a></li>
+              </ul><!-- end pagination -->
+              <% }else { %>
+              <h5 style="margin-top: 50px;"> محصولی یافت نشد ! </h5>
+              <% } %>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main><!-- end main -->
+
+  <footer>
+    <!-- start footer -->
+    <div class="container">
+      <div class="row footer-svg-icons border-bottom mx-2 py-2">
+        <div class="col-6 col-md text-center"><img src="/images/1.svg">
+          <p>تحویل اکسپرس</p>
+        </div>
+        <div class="col-6 col-md text-center"><img src="/images/2.svg">
+          <p>پشتیبانی 24 ساعته </p>
+        </div>
+        <div class="col-6 col-md text-center"><img src="/images/3.svg">
+          <p>پرداخت در محل </p>
+        </div>
+        <div class="col-6 col-md text-center"><img src="/images/4.svg">
+          <p>7 روز ضمانت بازگشت کالا</p>
+        </div>
+        <div class="col-12 col-md text-center"><img src="/images/5.svg">
+          <p>ضمانت اصل بودن کالا</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- start footer box -->
+        <div class="col-lg-2 col-sm-6 footer-box">
+          <p>با نیک کالا </p>
+          <ul class="ps-0">
+            <li class="mb-3"><a href="/main/contact-us">اتاق خبر نیک کالا</a></li>
+            <li class="mb-3"><a href="/main/contact-us">فرصت های شغلی</a></li>
+            <li class="mb-3"><a href="/main/contact-us">تماس با نیک کالا</a></li>
+            <li class="mb-3"><a href="/main/contact-us">درباره نیک کالا</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-sm-6 footer-box">
+          <p>خدمات مشتریان</p>
+          <ul class="ps-0">
+            <li class="mb-3"><a href="/main/contact-us">پرسش‌های متداول</a></li>
+            <li class="mb-3"><a href="/main/contact-us">شرایط استفاده</a></li>
+            <li class="mb-3"><a href="/main/contact-us">حریم خصوصی</a></li>
+            <li class="mb-3"><a href="/main/contact-us">گزارش تخلف</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-sm-6 footer-box">
+          <p>راهنمای خرید از نیک کالا</p>
+          <ul class="ps-0">
+            <li class="mb-3"><a href="/main/contact-us">نحوه ثبت سفارش</a></li>
+            <li class="mb-3"><a href="/main/contact-us">رویه ارسال سفارش</a></li>
+            <li class="mb-3"><a href="/main/contact-us">شیوه‌های پرداخت</a></li>
+            <li class="mb-3"><a href="/main/contact-us">رویه‌های بازگرداندن کالا</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-5 col-sm-6 footer-box">
+          <p class="mb-4">همراه ما باشید!</p>
+          <div class="social-list">
+            <a href="#"><i class="fab fa-instagram social-media"></i></a>
+            <a href="#"><i class="fab fa-telegram social-media"></i></a>
+            <a href="#"><i class="fab fa-linkedin social-media"></i></a>
+            <a href="#"><i class="fab fa-twitter social-media"></i></a>
+          </div>
+          <p>با ثبت ایمیل، از جدید‌ترین تخفیف‌ها با‌خبر شوید</p>
+          <div class="input-group mt-4 mb-5 email-box">
+            <input type="email" class="form-control form-control-lg" placeholder="ایمیل شما">
+            <button type="submit" class="btn btn-danger font-13 px-3">ارسال</button>
+          </div>
+        </div>
+      </div><!-- end footer box -->
+      <div class="row d-none d-sm-block">
+        <!-- start app download -->
+        <div class="col-12 app-download">
+          <div class="row">
+            <div class="col-5 d-flex align-items-center">
+              <img src="/images/footerLogo.png" class="p-2">
+              <span class="text-white ms-2"> دانلود اپلیکیشن</span>
+            </div>
+            <div class="col-7 d-flex align-items-center justify-content-end">
+              <a href="#"><img src="/images/bazzar.svg" class="img-fluid me-2 rounded"></a>
+              <a href="#"><img src="/images/sib-app.svg" class="img-fluid rounded"></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- end app download -->
+      <div class="row">
+        <!-- start footer details -->
+        <div class="col-md-8 col-12 footer-details ps-0">
+          <p>فروشگاه اینترنتی نیک کالا، بررسی، انتخاب و خرید آنلاین</p>
+          <span>
+            نیک کالا به عنوان یکی از قدیمی‌ترین فروشگاه های
+            اینترنتی با بیش از یک دهه تجربه،
+            با پایبندی به سه اصل، پرداخت در محل، هفت روز ضمانت بازگشت کالا و تضمین اصل‌بودن
+            کالا موفق شده تا همگام با فروشگاه‌های معتبر جهان، به بزرگ‌ترین فروشگاه اینترنتی
+            ایران تبدیل شود.
+          </span>
+        </div>
+        <div class="col-md-4 col-12 d-flex align-items-center justify-content-end footer-pic pe-0">
+          <img src="/images/f-1.png" class="footer-detail-pic">
+          <img src="/images/f-2.png" class="footer-detail-pic">
+        </div>
+      </div><!-- end footer details -->
+      <div class="row">
+        <!-- start copy right -->
+        <div class="col-12 copy-right">
+          <p>استفاده از مطالب فروشگاه اینترنتی نیک کالا فقط برای مقاصد غیرتجاری و
+            با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به یاس دیزاین می‌باشد.
+          </p>
+        </div>
+      </div><!-- end copy right -->
+    </div>
+    <a href="#" class="topbutton"><i class="fa fa-chevron-up"></i></a><!-- top button -->
+  </footer><!-- end footer -->
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.simple.timer.js"></script>
+  <script src="/js/jquery-asRange.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/price-range-slider.js"></script>
+  <script src="/js/sweetAlert.js"></script>
+  <script>
+    if ("<%= locals.messages.success %>") {
+      swal({
+        title: "<%= locals.messages.success %>",
+        icon: "success",
+        buttons: "تائید",
+      })
+    } else if ("<%= locals.messages.error %>") {
+      swal({
+        title: "<%= locals.messages.error %>",
+        icon: "error",
+        buttons: "متوجه شدم 💯",
+      })
+    }
+  </script>
+  <script src="/js/reload-events-search.js"></script>
+</body>
+
+</html>

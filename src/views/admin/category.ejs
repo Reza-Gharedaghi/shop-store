@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/app.css" />
+  <title> پنل مدیریت | نیک کالا </title>
+</head>
+
+<body>
+  <a href="#" class="btn">مدیریت محصولات</a>
+  <a href="/admin/category/users-manage" class="btn">مدیریت کاربرها</a>
+  <a href="/admin/category/comments-manage" class="btn">مدیریت کامنت ها</a>
+
+  <script src="/js/sweetAlert.js"></script>
+  <script>
+    if ("<%= locals.messages.success %>") {
+      swal({
+        title: "<%= locals.messages.success %>",
+        icon: "success",
+        buttons: "تائید",
+      })
+    } else if ("<%= locals.messages.error %>") {
+      swal({
+        title: "<%= locals.messages.error %>",
+        icon: "error",
+        buttons: "تلاش مجدد",
+      })
+    }
+  </script>
+</body>
+
+</html>
